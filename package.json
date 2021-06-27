@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npm run server",
-    "heroku-postbuild": "cd client && npm install && npm run build", 
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "server": "npx kill-port 5000 && nodemon app.js",
     "client": "npx kill-port 3000 && npm run start --prefix client",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
@@ -35,6 +35,6 @@
     "nodemon": "^2.0.2",
     "react-scripts": "^4.0.3",
     "web-vitals": "^2.0.1"
-  },
+  }
 
 }
