@@ -4,10 +4,10 @@
   "description": "Mern stack",
   "main": "app.js",
   "scripts": {
-    "start": "npx kill-port 3000 && npx kill-port 5000 && cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+    "start": "npx kill-port 3000 && npx kill-port 5000 && \"npm run server\" \"npm run client\"",
     "server": "npx kill-port 5000 && nodemon app.js",
     "client": "npx kill-port 3000 && npm run start --prefix client",
-    "dev": "npx kill-port 3000 && npx kill-port 5000 && cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "mern",
