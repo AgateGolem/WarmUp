@@ -7,8 +7,6 @@
     "start": "cross-env NODE_ENV=production node app.js",
     "server": "npx kill-port 5000 && nodemon app.js",
     "client": "npx kill-port 3000 && npm run start --prefix client",
-    "client:install": "npm install --prefix client",
-    "client:build": "npm run build --prefix client",
     "dev": "npx kill-port 3000 && npx kill-port 5000 && cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
