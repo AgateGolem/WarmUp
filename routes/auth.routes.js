@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
 const {check, validationResult} = require('express-validator')
-const User = require('./models/User')
+const User = require('../models/User')
 const router = Router()
 
 //api/auth
@@ -22,7 +22,7 @@ router.post(
         if(!errors.isEmpty()) {
             return res.status(400).json({ 
                 errors: errors.array(),
-                message: 'Некорректные данные прии регистрации'
+                message: 'Некорректные данные при регистрации'
             })
         }
 
