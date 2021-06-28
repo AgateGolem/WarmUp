@@ -11,7 +11,7 @@ function App() {
   const {token, login, logout, userId, ready} = useAuth()
   const isAuthenticated = !!token
   const routes = useRoutes(isAuthenticated)
-
+  const navbarAuthenticated = Navbar(isAuthenticated)
   if (!ready) {
     return <Loader />
   }
@@ -20,8 +20,9 @@ function App() {
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthenticated
     }}>
+    <Navbar />
       <Router>
-        { isAuthenticated && <Navbar /> }
+
         <div className="container">
           {routes}
         </div>

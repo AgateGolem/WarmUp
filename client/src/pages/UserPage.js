@@ -25,16 +25,23 @@ export const UserPage = () => {
 
 
 
-  const getTrain = () => {
-    const trains = request('/api/link/links/' + userId, 'GET', )
-    setListTrain(trains.map((train) => <li class="collection-item">{train.name}</li>))
+  const getTrain = async () => {
+    try {
+      const trains = await request('/api/link/links/' + userId, 'GET')
+      setListTrain(trains.map((train) => <li class="collection-item">{train.name}</li>))
+      console.log(listTrain)
+  } catch(e) {}
+
+
+
+
   }
-  
+
   useEffect(() => {
     if (show){
       showing()
     }
-      
+
   })
 
   const showing = () => {
@@ -50,18 +57,23 @@ export const UserPage = () => {
   const sendInf = async () => {
     try {
       const data = await request('/api/link/setName', 'POST', { ...form })
-      setInterval(show, value)
-      setInterval(showing, 600)
+      console.log(data)
+      if(data){
+        showing();
+      }
+      //setInterval(show, value)
+      //setInterval(showing, 600)
     } catch (e) { }
   }
 
 
-  if (loading) {
-    return <Loader/>
-  }
+  // if (loading) {
+  //   return <Loader/>
+  // }
 
   return (
     <>
+
       <div className="settings">
         <div className="form">
           <div className="card blue darken-1">
@@ -120,3 +132,5 @@ export const UserPage = () => {
     </>
   )
 }
+
+export default UserPage

@@ -1,0 +1,20 @@
+body{
+      background: #f9f9f9;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.card{
+  width: 300px;
+position: absolute !important;
+left: 6px;
+
+height: calc(100vh - 76px);
+}
+
+.card-title{
+      color: #ee6d72;
+}

@@ -39,10 +39,10 @@ export const AuthPage = () => {
   }
 
   return (
-    <div className="row">
-      <div className="col s6 offset-s3">
-        <h1>Warm Up</h1>
-        <div className="card blue darken-1">
+    <>
+
+
+        <div className="card">
           <div className="card-content white-text">
             <span className="card-title">Авторизация</span>
             <div>
@@ -103,9 +103,12 @@ export const AuthPage = () => {
             >
               Регистрация
             </button>
+
           </div>
         </div>
-      </div>
-    </div>
+
+    </>
   )
 }
+
+export default AuthPage

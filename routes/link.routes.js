@@ -32,7 +32,7 @@ router.post('/setName', async (req, res) => {
     const secName = inf.secName
     const tok = inf.token
 
-    const user = await User.findOne(tok.userId) 
+    const user = await User.findOne(tok.userId)
     user.name = name
     user.secName = secName
     await user.save()
@@ -46,9 +46,19 @@ router.post('/setName', async (req, res) => {
 
 router.get('/links/:userId', async (req, res) => {
   try {
-    const usera = await User.findById(req.params.userId)
-    const sx = usera.sex
-    const trains = await Link.find({sex: sx})
+    const user = await User.findById(req.params.userId)
+    const trains = await Link.find({
+  $and: [
+    {
+      $or: [
+        { sex: user.sex },
+        { sex: ""}
+      ]
+    },
+
+  ]
+});
+console.log(trains)
     res.json(trains)
   } catch (e) {
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
