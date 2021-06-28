@@ -1,5 +1,5 @@
 {
-  "port": procces.evn.port,
+  "port": 5000,
   "jwtSecret": "jwtpass",
   "mongoURI": "mongodb+srv://agategolem:qwert12345@cluster0.lkplf.mongodb.net/warmUpDataBase?retryWrites=true&w=majority",
   "baseUrl": "http://localhost:5000"
