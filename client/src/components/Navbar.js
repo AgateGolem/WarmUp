@@ -32,11 +32,8 @@ export const Navbar = () => {
   }
   const clickElem = event => {
 
-    //const fetched =  request('/api/link', 'GET')
-    //console.log(fetched)
-    console.log(dat)
-
-    const pst = request('/api/link/generate', 'POST', {...dat})
+    const fetched =  request('/api/link/links', 'GET')
+    console.log(fetched)
 
     }
 
@@ -45,22 +42,30 @@ export const Navbar = () => {
 return (
     <div>
 
-    <span onClick={clickElem} >что нибудь</span>
     <nav>
         <div className="nav-wrapper">
        <a href="#!" className="brand-logo">WarmUp</a>
        <ul className="right hide-on-med-and-down">
 
-         <li><a className="dropdown-trigger" onClick={clickMenu}  href="#!" data-target="dropdown1">Dropdown</a></li>
+         <li><a className="dropdown-trigger" onClick={clickMenu}  href="#!" data-target="dropdown1">Отжимания</a></li>
+          <li><a className="dropdown-trigger" onClick={clickMenu} href="#!" data-target="dropdown2">Приседания</a></li>
+          <li><a className="dropdown-trigger" onClick={clickMenu} href="#!" data-target="dropdown3">Планка</a></li>
+          <li><a className="dropdown-trigger" onClick={clickMenu} href="#!" data-target="dropdown4">Махи</a></li>
          <li><a href="/" onClick={logoutHandler}>Выйти</a></li>
        </ul>
      </div>
     </nav>
     <ul id="dropdown1" className="dropdown-content"  className={click > 0 ? 'opened dropdown-content': 'dropdown-content'} >
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li className="divider"></li>
-      <li><a href="#!">three</a></li>
+      Описание упражнения
+    </ul>
+    <ul id="dropdown2" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+      Описание упражнения
+    </ul>
+    <ul id="dropdown3" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+      Описание упражнения
+    </ul>
+    <ul id="dropdown4" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+      Описание упражнения
     </ul>
     </div>
   )
