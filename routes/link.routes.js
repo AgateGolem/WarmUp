@@ -58,7 +58,6 @@ router.get('/links/:userId', async (req, res) => {
 
   ]
 });
-console.log(trains)
     res.json(trains)
   } catch (e) {
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
