@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run server",
     "heroku-postbuild": "cd client && npm i && npm run start",
-    "server": "npx kill-port 5000 && node app.js",
-    "client": "npx kill-port 3000 && npm run start --prefix client",
+    "server": "node app.js",
+    "client": "npm run start --prefix client",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "keywords": [
