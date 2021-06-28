@@ -6,6 +6,14 @@ input.yellow-input {
   box-shadow: 0 1px 0 0 #fff!important;
 }
 
+.opened{
+  display: block;
+  opacity: 1;
+  position: absolute;
+    width: 100%;
+    top: 65px;
+}
+
 input.yellow-input + label {
   color: #ffffff!important;
 }

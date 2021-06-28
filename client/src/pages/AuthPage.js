@@ -8,7 +8,7 @@ export const AuthPage = () => {
   const message = useMessage()
   const {loading, request, error, clearError} = useHttp()
   const [form, setForm] = useState({
-    login: '', password: ''
+    login: '', password: '', sex: ''
   })
 
   useEffect(() => {
@@ -73,8 +73,20 @@ export const AuthPage = () => {
                 <label htmlFor="login">Пароль</label>
               </div>
 
+              <div className="input-radio">
+                <label>
+                  <input type="radio" name="sex" onClick={changeHandler} value="male" />
+                  <span>Мужской</span>
+                </label>
+                <label>
+                  <input type="radio" name="sex" onClick={changeHandler} value="female"  />
+                  <span>Женский</span>
+                </label>
+              </div>
+
             </div>
           </div>
+
           <div className="card-action">
             <button
               className="btn yellow darken-4"

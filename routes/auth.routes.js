@@ -11,8 +11,9 @@ const router = Router()
 router.post(
   '/register',
   [
-    check('password', 'Минимальная длина пароля 6 символов')
-      .isLength({ min: 6 })
+    check('login', 'Некорректный логин').isLength({min: 6, max: 12}),
+    check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 12}),
+    check('sex', 'Необходимо выбрать пол').exists()
   ],
   async (req, res) => {
   try {
@@ -25,7 +26,7 @@ router.post(
       })
     }
 
-    const {login, password} = req.body
+    const {login, password, sex} = req.body
 
     const candidate = await User.findOne({ login })
 
@@ -34,7 +35,7 @@ router.post(
     }
 
     const hashedPassword = await bcrypt.hash(password, 12)
-    const user = new User({ login, password: hashedPassword })
+    const user = new User({ login, password: hashedPassword, sex })
 
     await user.save()
 
@@ -88,6 +89,8 @@ router.post(
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова'+e })
   }
 })
+
+
 
 
 module.exports = router
