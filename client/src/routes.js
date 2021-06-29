@@ -2,7 +2,6 @@ import React from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
 import {UserPage} from './pages/UserPage'
 import {AuthPage} from './pages/AuthPage'
-import {BodyPage} from './pages/BodyPage'
 
 export const useRoutes = isAuthenticated => {
   console.log(isAuthenticated);

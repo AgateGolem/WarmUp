@@ -11,7 +11,6 @@ function App() {
   const {token, login, logout, userId, ready} = useAuth()
   const isAuthenticated = !!token
   const routes = useRoutes(isAuthenticated)
-  const navbarAuthenticated = Navbar(isAuthenticated)
   if (!ready) {
     return <Loader />
   }

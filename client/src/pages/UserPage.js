@@ -1,19 +1,17 @@
 import React, { useContext, useEffect, useState} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {AuthContext} from '../context/AuthContext'
-import {Loader} from '../components/Loader'
 import Modal from '../components/Modal'
 import 'materialize-css'
 
 export const UserPage = () => {
   const [value, setValue] = useState('900000')
-  const {loading, request} = useHttp()
+  const { request} = useHttp()
   const {token} = useContext(AuthContext)
   const { userId } = useContext(AuthContext)
   const [form, setForm] = useState({
     name: '', secName: '', token: {token}
   })
-  const trainList=""
   const [show, setShow] = useState(false)
   const openModal = () => setShow(true)
   const closeModal = () => setShow(false)
@@ -119,8 +117,8 @@ export const UserPage = () => {
                   {listTrain}
                 </ul>
 
-                <a class="waves-effect waves-light btn" onClick={sendInf}>Сохранить</a>
-                <a class="waves-effect waves-light btn" onClick={getTrain}>Test</a>
+                <a href="#!" class="waves-effect waves-light btn" onClick={sendInf}>Сохранить</a>
+                <a href="#!" class="waves-effect waves-light btn" onClick={getTrain}>Test</a>
               </div>
               </div>
             </div>

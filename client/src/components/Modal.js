@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext'
 import {useHttp} from '../hooks/http.hook'
 
 function Modal(props) {
-    const { show, closeModal, closeModalSec} = props;
+    const { show, closeModal} = props;
     const [isActive, setActive] = useState(false)
     const { userId } = useContext(AuthContext)
     const [activeTrainName, setActiveTrainName] = useState('')
@@ -36,8 +36,8 @@ function Modal(props) {
             <div className={show ? "modal" : "hide"}>
                 <button onClick={closeModal}>X</button>
                 <h1>Время разминки!</h1>
-                <a class="waves-effect waves-light btn" onClick={startTrain}>Начать</a>
-                <a class="waves-effect waves-light btn">Пропустить</a>
+                <a href="#!" class="waves-effect waves-light btn" onClick={startTrain}>Начать</a>
+                <a href="#!" class="waves-effect waves-light btn">Пропустить</a>
             </div>
             <div className= {isActive ? "modal" : "hide"}>
                 <button onClick={closeModalSecond}>X</button>

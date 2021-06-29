@@ -1,25 +1,15 @@
 import React, {useContext, useState} from 'react'
-import {NavLink, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {AuthContext} from '../context/AuthContext'
-import {useAuth} from '../hooks/auth.hook'
-import {useHttp} from '../hooks/http.hook'
 
 
 export const Navbar = () => {
 
-  const {token} = useContext(AuthContext)
-  //console.log(token)
   const history = useHistory()
   const auth = useContext(AuthContext)
   const isAuth = auth.isAuthenticated
   console.log('Auth', isAuth)
-  const test = 1
   const [click, setClick] = useState(0)
-    const {request} = useHttp()
-
-    const [dat, setDat] = useState({
-      name:"Отжимания", description:"Описание1", sex: "male"
-    })
 
   const logoutHandler = event => {
     event.preventDefault()
@@ -34,19 +24,8 @@ export const Navbar = () => {
      } else{
        setClick(click+1)
      }
-
-
-  }
-  const clickElem = event => {
-
-    const fetched =  request('/api/link/links', 'GET')
-    console.log(fetched)
-
     }
-
-
-
-return (
+  return (
     <div>
 
     <nav>
@@ -63,16 +42,16 @@ return (
      </div>
    
     </nav>
-    <ul id="dropdown1" className="dropdown-content"  className={click > 0 ? 'opened dropdown-content': 'dropdown-content'} >
+    <ul id="dropdown1"   className={click > 0 ? 'opened dropdown-content': 'dropdown-content'} >
       Описание упражнения
     </ul>
-    <ul id="dropdown2" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+    <ul id="dropdown2"  className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
       Описание упражнения
     </ul>
-    <ul id="dropdown3" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+    <ul id="dropdown3" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
       Описание упражнения
     </ul>
-    <ul id="dropdown4" className="dropdown-content" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
+    <ul id="dropdown4" className={click > 0 ? 'opened dropdown-content' : 'dropdown-content'} >
       Описание упражнения
     </ul>
     </div>
