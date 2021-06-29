@@ -102,9 +102,9 @@ export const UserPage = () => {
                   />
                   <label htmlFor="login">Фамилия</label>
                 </div>
-                <div class="input-field col s12">
+                <div className="input-field col s12">
                   <select value={value} onChange={selectTime}>
-                    <option value="" disabled selected >Выбрать время интервала</option>
+                    <option value=" " disabled selected >Выбрать время интервала</option>
                     <option value="900000" >15 минут</option>
                     <option value="1800000" >30 минут</option>
                     <option value="3600000" >60 минут</option>
