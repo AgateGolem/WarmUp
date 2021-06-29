@@ -5,9 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "npm run server",
+    "prod": "cd client && npm i && npm run build",
+    "poststart": "npm run client",
     "heroku-postbuild": "cd client && npm i && npm run start",
     "server": "node app.js",
-    "client": "npm run start --prefix client",
+    "client": "npm run build && npm run start --prefix client",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "keywords": [
