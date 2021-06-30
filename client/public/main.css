@@ -9,12 +9,13 @@ body{
 
 .card{
   width: 300px;
-position: absolute !important;
-left: 6px;
+  position: absolute !important;
+  top: 4.5rem;
+  left: 6px;
 
-height: calc(100vh - 76px);
+  height: calc(100vh - 76px);
 }
 
 .card-title{
-      color: #ee6d72;
+      color: white;
 }

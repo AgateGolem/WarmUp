@@ -64,7 +64,4 @@ router.get('/links/:userId', async (req, res) => {
   }
 })
 
-
-
-
 module.exports = router

@@ -1,5 +1,8 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
+body{
+  background-image: url('./img/main.jpeg');
+}
 
 input.yellow-input {
   border-bottom: 1px solid #fff!important;
@@ -10,8 +13,53 @@ input.yellow-input {
   display: block;
   opacity: 1;
   position: absolute;
-    width: 100%;
-    top: 65px;
+  width: 40%;
+  padding: 0 30px;
+  top: 65px;
+}
+
+.hide-on-med-and-down{
+  width: 100%;
+}
+
+.hide-on-med-and-down li:nth-child(5) {
+  margin-left: 65%;
+}
+
+.open{
+  display: block;
+  opacity: 0;
+  transition: 1s;
+}
+
+.closed {
+  display: none;
+}
+
+.reg{
+}
+
+.burger{
+  position: absolute;
+  top: 4.5rem;
+  left: 6px;
+  z-index: 1;
+}
+
+.close{
+  position: absolute;
+  top: 0.6rem;
+  left: 265px;
+  z-index: 1;
+}
+
+.container {
+  max-width: none;
+  width: 100%;
+}
+
+.settings{
+  transition: 1s;
 }
 
 .input-field select{
@@ -29,6 +77,34 @@ input.yellow-input:focus + label {
 input.yellow-input:focus {
   border-bottom: 1px solid #ffeb3b!important;
   box-shadow: 0 1px 0 0 #ffeb3b!important;
+}
+
+.nav-wrapper {
+  background-color: #0abab5;
+}
+
+.brand-logo{
+  margin: 0 15px;
+}
+
+.desc{
+  margin-left: 20%;
+  background-color: rgba(225, 225, 225, 30%)!important;
+  width: 35%;
+  height: auto;
+  font-size: 18px;
+}
+
+.skip{
+  margin: 0 20px;
+}
+
+.card {
+  background-color: #0abab5;
+}
+
+.card-content ul {
+  color:black;
 }
 
 .App {
@@ -58,26 +134,32 @@ input.yellow-input:focus {
   display: block;
   width: 500px;
   position: relative;
-  margin: 0px auto;
+  margin: auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #0abab5;
+  color: white;
   border-radius: 2px;
   transform: translateY(100%);
   transition: transform 0.2s ease;
-  box-shadow: 0 2px 8px 3px;
+  box-shadow: 0 2px 8px 3px black;
+  text-align: center;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal h1{
+  font-size: 30px;
 }
 
 .modal button {
   position: absolute;
-  right: -1rem;
-  top: -1rem;
+  right: 0rem;
+  top: 0rem;
   width: 2rem;
   height: 2rem;
   padding: 0.5rem;
   margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px #0000003a;
+  color: white;
+  background-color: #0abab5;
+  border: 1px solid #0abab5;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.562);
 }

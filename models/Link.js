@@ -6,7 +6,7 @@ const schema = new Schema({
   description: {type: String, required: true},
   sex: {type: String, required: true},
   sourceWiki: { type: String, required: true},
-  sourceYT: { type: String, required: true }
+  sourceYT: { Ftype: String, required: false }
 })
 
 module.exports = model('Link', schema)
