@@ -10,7 +10,7 @@ import 'materialize-css'
 
 export const UserPage = () => {
   const [value, setValue] = useState('900000')
-  const { request, loading } = useHttp()
+  const { request} = useHttp()
   const { userId } = useContext(AuthContext)
   const {token} = useContext(AuthContext)
   const [form, setForm] = useState({

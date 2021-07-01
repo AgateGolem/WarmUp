@@ -13,6 +13,7 @@ router.post(
   [
     check('login', 'Некорректный логин').isLength({min: 6, max: 15}),
     check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 15}),
+    check('password', '')
     check('sex', 'Необходимо выбрать пол').exists()
   ],
   async (req, res) => {
@@ -42,7 +43,7 @@ router.post(
     res.status(201).json({ message: 'Пользователь создан' })
 
   } catch (e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова'+e })
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова'})
   }
 })
 
