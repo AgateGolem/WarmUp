@@ -54,7 +54,74 @@ export const AuthPage = () => {
 
       <div className="wrapper">
         <div className='cont'>
-        <div className={toggle ? "closed card" : "card auth"}>
+
+          <div className={toggle ? "closed card" : "card auth" }>
+            <div className="card-content white-text">
+              <span className="card-title">Регистрация</span>
+              <div>
+
+                <div className="input-field">
+                  <input
+                    placeholder="Введите логин"
+                    id="login"
+                    type="text"
+                    name="login"
+                    className="yellow-input"
+                    value={form.login}
+                    onChange={changeHandler}
+                  />
+                  <label htmlFor="login">Логин</label>
+                </div>
+
+                <div className="input-field">
+                  <input
+                    placeholder="Введите пароль"
+                    id="password"
+                    type="password"
+                    name="password"
+                    className="yellow-input"
+                    value={form.password}
+                    onChange={changeHandler}
+                  />
+                  <label htmlFor="login">Пароль</label>
+                </div>
+
+                <div className="input-radio">
+                  <label>
+                    <input type="radio" name="sex" onClick={changeHandler} value="male" />
+                    <span>Мужской</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="sex" onClick={changeHandler} value="female" />
+                    <span>Женский</span>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="card-action reg">
+              <button
+                className="btn  darken-4"
+                style={{ marginRight: 10 }}
+                disabled={loading}
+                onClick={changeToggle}
+              >
+                Войти
+              </button>
+              <button
+                className="btn lighten-1 black-text"
+                onClick={registerHandler}
+                disabled={loading}
+              >
+                Регистрация
+              </button>
+
+            </div>
+          </div>
+
+
+          <div className={toggle ? "card auth" : "closed card"}>
           <div className="card-content white-text">
             <span className="card-title">Авторизация</span>
             <div>
@@ -107,72 +174,6 @@ export const AuthPage = () => {
 
           </div>
         </div>
-
-
-      <div className={toggle ? "card auth" : "closed card" }>
-        <div className="card-content white-text">
-          <span className="card-title">Регистрация</span>
-          <div>
-
-            <div className="input-field">
-              <input
-                placeholder="Введите логин"
-                id="login"
-                type="text"
-                name="login"
-                className="yellow-input"
-                value={form.login}
-                onChange={changeHandler}
-              />
-              <label htmlFor="login">Логин</label>
-            </div>
-
-            <div className="input-field">
-              <input
-                placeholder="Введите пароль"
-                id="password"
-                type="password"
-                name="password"
-                className="yellow-input"
-                value={form.password}
-                onChange={changeHandler}
-              />
-              <label htmlFor="login">Пароль</label>
-            </div>
-
-            <div className="input-radio">
-              <label>
-                <input type="radio" name="sex" onClick={changeHandler} value="male" />
-                <span>Мужской</span>
-              </label>
-              <label>
-                <input type="radio" name="sex" onClick={changeHandler} value="female" />
-                <span>Женский</span>
-              </label>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="card-action reg">
-          <button
-            className="btn  darken-4"
-            style={{ marginRight: 10 }}
-            disabled={loading}
-            onClick={changeToggle}
-          >
-            Войти
-          </button>
-          <button
-            className="btn lighten-1 black-text"
-            onClick={registerHandler}
-            disabled={loading}
-          >
-            Регистрация
-          </button>
-
-        </div>
-      </div>
 
 
       <div class="row">

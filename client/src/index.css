@@ -35,7 +35,7 @@ input.yellow-input {
 }
 
 .wrapper {
-  background-image: url('./img/main.jpeg');
+  background-image: url('./img/main.jpg');
   background-color: white;
   height: 87vh;
   width: 100%;
@@ -65,8 +65,7 @@ input.yellow-input {
 
 .close{
   position: absolute;
-  top: 0.6rem;
-  left: 265px;
+  left: 255px;
   z-index: 1;
 }
 
@@ -130,6 +129,12 @@ input.yellow-input:focus {
 }
 
 .auth {
+  background-color: #0abab5;
+  margin-top: 8px;
+  box-shadow: none;
+}
+
+.up{
   background-color: #0abab5;
   margin-top: 8px;
   box-shadow: none;
