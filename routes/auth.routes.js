@@ -11,9 +11,8 @@ const router = Router()
 router.post(
   '/register',
   [
-    check('login', 'Некорректный логин').isLength({min: 6, max: 15}),
-    check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 15}),
-    check('password', '')
+    check('login', 'Некорректный логин').isLength({ min: 6, max: 15 }).matches(/^[A-Za-z0-9]+$/),
+    check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 15 }).matches(/^[A-Za-z0-9]+$/),
     check('sex', 'Необходимо выбрать пол').exists()
   ],
   async (req, res) => {
@@ -23,7 +22,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({
         errors: errors.array(),
-        message: 'Длина логина и пароля от 6 до 15 символов'
+        message: 'Длина логина и пароля от 6 до 15 символов, латинские символы и цифры'
       })
     }
 
