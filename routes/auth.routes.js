@@ -11,8 +11,8 @@ const router = Router()
 router.post(
   '/register',
   [
-    check('login', 'Некорректный логин').isLength({min: 6, max: 12}),
-    check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 12}),
+    check('login', 'Некорректный логин').isLength({min: 6, max: 15}),
+    check('password', 'Минимальная длина пароля 6 символов').isLength({ min: 6, max: 15}),
     check('sex', 'Необходимо выбрать пол').exists()
   ],
   async (req, res) => {
@@ -22,7 +22,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({
         errors: errors.array(),
-        message: 'Некорректный данные при регистрации'
+        message: 'Длина логина и пароля от 6 до 15 символов'
       })
     }
 
@@ -90,18 +90,14 @@ router.post(
   }
 })
 
-//router.get('/:userId', async (req, res) => {
-//  try {
-//    const user = await User.findById(req.params.userId)
-//    if (user.name != '') {
-//      res.json(user.name)
-//    }
-//    else {
-//      res.json(user.login)
-//    }
-//  } catch (e) {
-//    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-//  }
-//})
+router.get('/:userId', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId)
+    res.json(user)
+    console.log(user)
+  } catch (e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+  }
+})
 
 module.exports = router

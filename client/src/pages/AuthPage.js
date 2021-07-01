@@ -52,8 +52,9 @@ export const AuthPage = () => {
   return (
     <>
 
-
-        <div className={toggle ? "closed card" : "card"}>
+      <div className="wrapper">
+        <div className='cont'>
+        <div className={toggle ? "closed card" : "card auth"}>
           <div className="card-content white-text">
             <span className="card-title">Авторизация</span>
             <div>
@@ -68,7 +69,7 @@ export const AuthPage = () => {
                   value={form.login}
                   onChange={changeHandler}
                 />
-                <label htmlFor="login">login</label>
+                <label htmlFor="login">Логин</label>
               </div>
 
               <div className="input-field">
@@ -108,7 +109,7 @@ export const AuthPage = () => {
         </div>
 
 
-      <div className={toggle ? "card" : "closed card" }>
+      <div className={toggle ? "card auth" : "closed card" }>
         <div className="card-content white-text">
           <span className="card-title">Регистрация</span>
           <div>
@@ -123,7 +124,7 @@ export const AuthPage = () => {
                 value={form.login}
                 onChange={changeHandler}
               />
-              <label htmlFor="login">login</label>
+              <label htmlFor="login">Логин</label>
             </div>
 
             <div className="input-field">
@@ -186,6 +187,8 @@ export const AuthPage = () => {
           </div>
         </div>
       </div>
+      </div>
+    </div>
 
 
     </>

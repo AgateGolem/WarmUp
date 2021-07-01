@@ -39,7 +39,7 @@ function Modal(props) {
         }
         setActiveTrainName(fetched[num].name)
         setActiveTrainDesc(fetched[num].description)
-        setActiveTrainYt(<a href={fetched[num].sourceYT}>Ссылка на видеоролик</a>)
+        setActiveTrainYt(<a className='yt' href={fetched[num].sourceYT}>Ссылка на видеоролик</a>)
     }
 
     const skipTrain = () => {
@@ -54,17 +54,17 @@ function Modal(props) {
     return (
         <>
             <title></title>
-            <div className={show ? "modal" : "hide"}>
-                <h1>Время разминки!</h1>
-                <a href="#!" class="waves-effect waves-light btn start" onClick={startTrain}>Начать</a>
-                <a href="#!" class="waves-effect waves-light btn skip" onClick={skipTrain}>Пропустить</a>
-            </div>
-            <div className= {isActive ? "modal" : "hide"}>
+            <div className={isActive ? "modal" : "hide"}>
                 <button onClick={closeModalSecond}>X</button>
                 <p>{activeTrainName}</p>
                 <p>{activeTrainDesc}</p>
                 <p>{activeTrainYt}</p>
-                <img src={imgSrc}/>
+                <img src={imgSrc} alt='С фото что-то не так' />
+            </div>
+            <div className={show ? "modal" : "hide"}>
+                <h1>Время разминки!</h1>
+                <a href="#!" class="waves-effect waves-light btn start" onClick={startTrain}>Начать</a>
+                <a href="#!" class="waves-effect waves-light btn skip" onClick={skipTrain}>Пропустить</a>
             </div>
         </>
     )

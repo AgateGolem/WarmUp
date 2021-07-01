@@ -1,7 +1,7 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
 body{
-  background-image: url('./img/main.jpeg');
+  background-color: #0abab5;
 }
 
 input.yellow-input {
@@ -22,21 +22,38 @@ input.yellow-input {
   width: 100%;
 }
 
+.input-radio label {
+  color: white;
+}
+
+.hide-on-med-and-down li a {
+  font-size: 18px;
+}
+
 .hide-on-med-and-down li:nth-child(5) {
-  margin-left: 65%;
+  margin-left: 72%;
+}
+
+.wrapper {
+  background-image: url('./img/main.jpeg');
+  background-color: white;
+  height: 87vh;
+  width: 100%;
+}
+
+.cont {
+  margin-left: 65px;
+  margin-bottom: 65px;
+  margin-right: 65px;
 }
 
 .open{
-  display: block;
-  opacity: 0;
+  display: none;
   transition: 1s;
 }
 
 .closed {
   display: none;
-}
-
-.reg{
 }
 
 .burger{
@@ -55,7 +72,9 @@ input.yellow-input {
 
 .container {
   max-width: none;
-  width: 100%;
+  margin: -15px auto;
+  width: 93%;
+  height: 100%;
 }
 
 .settings{
@@ -79,6 +98,11 @@ input.yellow-input:focus {
   box-shadow: 0 1px 0 0 #ffeb3b!important;
 }
 
+.input-field label {
+  top: -5px;
+  transform: none;
+}
+
 .nav-wrapper {
   background-color: #0abab5;
 }
@@ -87,7 +111,13 @@ input.yellow-input:focus {
   margin: 0 15px;
 }
 
+.row{
+  width: 60%;
+  margin: auto;
+}
+
 .desc{
+  position: relative;
   margin-left: 20%;
   background-color: rgba(225, 225, 225, 30%)!important;
   width: 35%;
@@ -99,8 +129,14 @@ input.yellow-input:focus {
   margin: 0 20px;
 }
 
-.card {
+.auth {
   background-color: #0abab5;
+  margin-top: 8px;
+  box-shadow: none;
+}
+
+nav{
+  box-shadow: none;
 }
 
 .card-content ul {
@@ -108,8 +144,7 @@ input.yellow-input:focus {
 }
 
 .App {
-  margin: 1rem auto;
-  max-width: 1000px;
+  margin: 0 auto;
   padding: 1rem;
 }
 .show {
@@ -139,11 +174,15 @@ input.yellow-input:focus {
   background-color: #0abab5;
   color: white;
   border-radius: 2px;
-  transform: translateY(100%);
   transition: transform 0.2s ease;
   box-shadow: 0 2px 8px 3px black;
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.yt {
+  color:white;
+  font-weight: 800;
 }
 
 .modal h1{

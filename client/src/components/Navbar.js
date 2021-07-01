@@ -1,32 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { useHttp } from '../hooks/http.hook'
+import React, { useContext, useState} from 'react'
 import { AuthContext } from '../context/AuthContext'
 
 
 export const Navbar = () => {
 
-  //const { request } = useHttp()
   const auth = useContext(AuthContext)
   const isAuth = auth.isAuthenticated
-  //const userId = auth.userId
   const [click, setClick] = useState(0)
-  const [userName, setUserName] = useState('пользователь')
 
   const logoutHandler = event => {
     event.preventDefault()
     auth.logout()
   }
-
-//  useEffect( () => {
-//    async function fetchData() {
-//      console.log(isAuth)
-//      if (isAuth){ 
-//        setUserName(await request('/api/auth/' + userId, 'GET'))
-//        console.log(userName)
-//      }
-//    }
-//    fetchData()
-//  }, [userName, isAuth, request, userId])
 
   const clickMenu1 = () => {
     if (click !== 1) {
@@ -66,12 +51,11 @@ export const Navbar = () => {
 
     <nav>
       <div className="nav-wrapper">
-        <ul className="left hide-on-med-and-down">
+        <ul className="center hide-on-med-and-down">
           <li className={!isAuth ? 'hidden' : ''}><a value="Отжимания" onClick={clickMenu1} href="#!" data-target="dropdown1">Отжимания</a></li>
             <li className={!isAuth ? 'hidden' : ''}><a className="dropdown-trigger" value="Приседания" onClick={clickMenu2} href="#!" data-target="dropdown2">Приседания</a></li>
             <li className={!isAuth ? 'hidden' : ''}><a className="dropdown-trigger" value="Планка" onClick={clickMenu3} href="#!" data-target="dropdown3">Планка</a></li>
             <li className={!isAuth ? 'hidden' : ''}><a className="dropdown-trigger" value="Прыжки" onClick={clickMenu4} href="#!" data-target="dropdown4">Прыжки</a></li>
-          <li className={!isAuth ? 'hidden' : ''}>Здравствуйте, {userName}!</li>
           <li className={!isAuth ? 'hidden' : ''}><a href="/" onClick={logoutHandler}>Выйти</a></li>
         </ul>
       </div>
