@@ -19,7 +19,7 @@ input.yellow-input {
 }
 
 .hide-on-med-and-down{
-  width: 96%;
+  width: 84%;
 }
 
 .input-radio label {
@@ -31,7 +31,7 @@ input.yellow-input {
 }
 
 .hide-on-med-and-down li:nth-child(5) {
-  margin-left: 68.4%;
+  margin-left: 63.5%;
 }
 
 .wrapper {
@@ -45,6 +45,11 @@ input.yellow-input {
   margin-left: 65px;
   margin-bottom: 65px;
   margin-right: 65px;
+}
+
+.dropdown-content {
+  margin-left: 15.66%;
+  padding-bottom: 10px;
 }
 
 .open{
@@ -145,7 +150,7 @@ nav{
 }
 
 nav ul {
-  margin-left: 3.5%;
+  margin-left: 15.7%;
 }
 
 .card-content ul {
